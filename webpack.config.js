@@ -29,7 +29,7 @@ module.exports = {
             loader: "html-loader",
         },
         {
-            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            test: /\.(png|svg|webp|jpg|jpeg|gif)$/i,
             type: "asset/resource",
         },
         ],
