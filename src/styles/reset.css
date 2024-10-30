@@ -1,8 +1,9 @@
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
     box-sizing: border-box;
-  }
-  
+    font-family: inherit;
+}
+
   /* 2. Remove default margin */
 * {
 margin: 0;
@@ -13,6 +14,8 @@ body {
 line-height: 1.5;
 /* 4. Improve text rendering */
 -webkit-font-smoothing: antialiased;
+margin: 0;
+padding: 0;
 }
 
 /* 5. Improve media defaults */
@@ -34,6 +37,7 @@ overflow-wrap: break-word;
 /* 8. Improve line wrapping */
 p {
 text-wrap: pretty;
+max-width: 75ch;
 }
 h1, h2, h3, h4, h5, h6 {
 text-wrap: balance;
