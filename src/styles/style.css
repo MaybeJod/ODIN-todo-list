@@ -1,6 +1,9 @@
 /* font */
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* icons */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+
 
 :root {
     --main-white:  #edede4;
@@ -44,17 +47,94 @@ aside {
     height: 100%;
     overflow-y: auto;
     background-color: var(--main-blue);
-    padding: 1vw;
+    padding: 2vw;
     color: var(--main-white);
-    h1 {
-        font-size: 7rem;
-        font-weight: var(--heading-font-weight-700);
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            font-size: clamp(4rem, 2.5rem + 0.25vw, 5rem);
+            font-weight: var(--heading-font-weight-700);
+        }
+        svg {
+            width: 80%;
+            height: 80%;
+        }
+    }
+
+    button {
+        background-color: transparent;
+        border-radius: 2px;
+        border: 0;
+        cursor: pointer;
+        color: var(--main-white);
+        font-size: 1rem;
+        padding: .5rem .75rem;
+        text-align: left;
+        transition: transform;
+        width: 100%;
+
+        display: grid;
+        align-items: center;
+        gap: 0.6rem;
+        grid-template-columns: auto 1fr 20px;
+
+        &:hover {
+            background-color: var(--shade-color);
+        }
+
+        &:active {
+            background-color: red;
+        }
     }
 
     nav {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+
+        .add-tasks {
+            font-size: 1.2rem;
+            font-weight: var(--heading-font-weight-700);
+        }
+        
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+            h3 {
+                font-weight: var(--heading-font-weight-700);
+            }
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                        &:hover {
+                            background-color: var(--shade-color);
+                        }
+
+                        &:active {
+                            background-color: red;
+                        }
+                }
+            }
+        }
+    }
+
+    footer {
+        color: var(--shade-color);
+        a {
+            text-decoration: none;
+            color: var(--main-white);
+        }
     }
 }
 
@@ -62,4 +142,7 @@ main {
     background-color: var(--main-white);
     padding: 1vw;
     text-align: center;
+    h2 {
+        font-weight: var(--heading-font-weight-700);
+    }
 }
