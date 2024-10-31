@@ -32,9 +32,9 @@ export function addTask(taskTitle, taskNotes, deadline, priority, location) {
         tasksArray.push(task);
         saveTasksToLocalStorage(tasksArray);
         } else {
-            let projectLocation = projectsArray.find(project => project.projectName === location);
+            let projectLocation = projectsArray.find(project => project.name === location);
             if(projectLocation) {
-                projectsArray.tasks.push(task);
+                projectLocation.tasks.push(task);
                 saveProjectsToLocalStorage(projectsArray);
             }
         }  
