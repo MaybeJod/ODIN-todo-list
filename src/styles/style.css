@@ -4,7 +4,6 @@
 /* icons */
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
 
-
 :root {
     --main-white:  #edede4;
     --main-blue: #004bff;
@@ -22,22 +21,17 @@
 }
 
 body {
-
     font-family: Josefin Sans , sans-serif;
-
     min-block-size: 100vh;
     min-block-size: 100dvh;
-    
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows:  1fr auto;
-
     grid-template-areas: 
     "aside main"
     "aside main"
     "aside main"
     ;
-
 }
 
 aside {
@@ -49,7 +43,6 @@ aside {
     background-color: var(--main-blue);
     padding: 2vw;
     color: var(--main-white);
-
     .logo {
         display: flex;
         align-items: center;
@@ -63,7 +56,6 @@ aside {
             height: 80%;
         }
     }
-
     button {
         background-color: transparent;
         border-radius: 2px;
@@ -75,31 +67,25 @@ aside {
         text-align: left;
         transition: transform;
         width: 100%;
-
         display: grid;
         align-items: center;
         gap: 0.6rem;
         grid-template-columns: auto 1fr 20px;
-
         &:hover {
             background-color: var(--shade-color);
         }
-
         &:active {
             background-color: red;
         }
     }
-
     nav {
         display: flex;
         flex-direction: column;
         margin-top: 2rem;
-
         .add-tasks {
             font-size: 1.2rem;
             font-weight: var(--heading-font-weight-700);
         }
-        
         .projects {
             display: flex;
             flex-direction: column;
@@ -116,11 +102,9 @@ aside {
                     display: flex;
                     align-items: center;
                     gap: 1rem;
-
                         &:hover {
                             background-color: var(--shade-color);
                         }
-
                         &:active {
                             background-color: red;
                         }
@@ -128,9 +112,10 @@ aside {
             }
         }
     }
-
     footer {
         color: var(--shade-color);
+        display: flex;
+        align-items: center;
         a {
             text-decoration: none;
             color: var(--main-white);

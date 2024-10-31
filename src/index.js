@@ -1,6 +1,12 @@
 import "./styles/reset.css";
 import "./styles/style.css";
 
+import {  tasksArray,addTask, saveTasksToLocalStorage, projectsArray, addProject, saveProjectsToLocalStorage } from "./components/add-task-and-project";
+
+
+
+/* import { addProject, saveProjectsToLocalStorage } from "./components/add-project"; */
+
 //add task button
     //creates what a task needs
 
@@ -13,7 +19,5 @@ import "./styles/style.css";
     
 //store tasks
 //display tasks
-console.log('hello')
+
 console.log('world')
-
-
