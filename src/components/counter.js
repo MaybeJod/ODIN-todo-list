@@ -18,4 +18,8 @@ export function updateCounts() {
     projectsArray.forEach(project => {
         console.log(`Tasks in project "${project.name}": ${project.tasks.length}`);
     });
+
+    //no more tasks
+    const allClearSection = document.querySelector(".no-more-tasks")
+    allClearSection.style.display = tasksArray.length ? "none" : "block";
 }

@@ -60,7 +60,7 @@ function createTaskElement(task) {
     taskDetailsContainer.appendChild(taskProject);
 
     taskDetails.appendChild(taskDetailsContainer);    
-    taskElement.appendChild(taskDetails);   
-    return taskElement;
+    taskElement.appendChild(taskDetails); 
     
+    return taskElement; 
 }
