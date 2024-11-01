@@ -15,8 +15,10 @@ export function displayTaskForm(projectsArray) {
     
     // Add event listener to the form
     const taskForm = document.getElementById("taskForm");
+    const cancelButton = document.getElementById("cancelTaskButton");
     if (taskForm) {
         taskForm.addEventListener("submit", handleTaskFormSubmit);
+        cancelButton.addEventListener("click", handleCancelButton);
     } else {
         console.error("taskForm element not found after inserting form HTML");
     }
@@ -45,6 +47,7 @@ function createTaskFormHTML(projectsArray) {
                 </select>
             </label><br>
             <button type="submit">Add Task</button>
+            <button type="button" id="cancelTaskButton">Cancel</button>
         </form>
     `;
     
@@ -74,5 +77,11 @@ function handleTaskFormSubmit(event) {
         document.getElementById("taskFormContainer").style.display = "none";
     } else {
         console.error("Task object is undefined or invalid");
-    }
+    }    
 }
+
+
+function handleCancelButton(event) {
+    event.preventDefault();
+    document.getElementById("taskFormContainer").style.display = "none";
+}       

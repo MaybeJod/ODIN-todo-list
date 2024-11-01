@@ -3,7 +3,7 @@ import "./styles/style.css"; // Application styles
 
 import { addTask, addProject, tasksArray, projectsArray, removeTask, removeProject, loadDataFromLocalStorage } from './components/taskProjectManager.js';
 import { updateCounts } from './components/counter.js';
-//import { sampleProjects, sampleTasks } from './components/sampleData.js';
+import { sampleProjects, sampleTasks } from './components/sampleData.js';
 import { displayTaskForm } from './components/taskForm.js';
 import { addTaskToDOM } from './components/domManager.js';
 
@@ -25,7 +25,7 @@ export function loadTasksFromLocalStorage() {
 }
 
 // Load sample content if local storage is empty or if the sample data flag is not set
-/* function loadSampleContent() {
+function loadSampleContent() {
     const savedTasks = JSON.parse(localStorage.getItem("tasks"));
     const savedProjects = JSON.parse(localStorage.getItem("projects"));
     const sampleLoaded = localStorage.getItem("sampleLoaded");
@@ -46,7 +46,7 @@ export function loadTasksFromLocalStorage() {
         tasksArray.push(...(savedTasks || []));
         projectsArray.push(...(savedProjects || []));
     }
-} */
+}
 
 // Optionally, add a function to reset data (for testing or development)
 /* let resetButton = document.querySelector("#reset-button");
@@ -55,12 +55,13 @@ function resetData() {
     localStorage.removeItem("tasks");
     localStorage.removeItem("projects");
     localStorage.removeItem("sampleLoaded");
-    loadSampleContent();
-}    */
+    //loadSampleContent();
+
+}   */ 
 
 
 // Initialize application
-//loadSampleContent();
+loadSampleContent();
 updateCounts();
 
 
