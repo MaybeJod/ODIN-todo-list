@@ -1,7 +1,7 @@
 import "./styles/reset.css";
 import "./styles/style.css";
 
-import {  tasksArray,addTask, saveTasksToLocalStorage, projectsArray, addProject, saveProjectsToLocalStorage } from "./components/add-task-and-project";
+import { countAllTasks, tasksArray,addTask, saveTasksToLocalStorage, projectsArray, addProject, saveProjectsToLocalStorage } from "./components/add-task-and-project";
 
 
 

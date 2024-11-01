@@ -1,4 +1,4 @@
-import { addTask, addProject } from "./add-task-and-project";
+import { addTask, addProject, tasksArray, projectsArray } from "./add-task-and-project";    
 
 const savedTasks = localStorage.getItem("tasks");
 
@@ -22,6 +22,9 @@ export function sampleContent() {
 
         addTask("Task 6", "Task 6 Notes", "2021-10-11", "High", "new project");
 
+        addTask("Task 7", "Task 7 Notes", "2021-10-11", "High", "new project");
+
+        
 
         return;
     }
