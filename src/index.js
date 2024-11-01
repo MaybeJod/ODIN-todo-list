@@ -1,9 +1,28 @@
 import "./styles/reset.css"; // Reset CSS
 import "./styles/style.css"; // Application styles
 
-import { addTask, addProject, tasksArray, projectsArray } from './components/taskProjectManager.js';
+import { addTask, addProject, tasksArray, projectsArray, removeTask, removeProject, loadDataFromLocalStorage } from './components/taskProjectManager.js';
 import { updateCounts } from './components/counter.js';
 //import { sampleProjects, sampleTasks } from './components/sampleData.js';
+import { displayTaskForm } from './components/taskForm.js';
+import { addTaskToDOM } from './components/domManager.js';
+
+document.getElementById("addTaskButton").addEventListener("click", () => {
+    displayTaskForm(projectsArray);
+});
+
+document.getElementById("addTaskButton").addEventListener("click", () => {
+    console.log("Add Task button clicked"); // Debugging log
+    displayTaskForm(projectsArray);
+});
+
+export function loadTasksFromLocalStorage() {
+    const savedTasks = localStorage.getItem("tasks");
+    if (savedTasks) {
+        const tasksArray = JSON.parse(savedTasks); // Parse the saved tasks
+        tasksArray.forEach(task => addTaskToDOM(task)); // Add each task to the DOM
+    }
+}
 
 // Load sample content if local storage is empty or if the sample data flag is not set
 /* function loadSampleContent() {
@@ -41,9 +60,15 @@ function resetData() {
 
 
 // Initialize application
-/* loadSampleContent(); */
+//loadSampleContent();
 updateCounts();
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadTasksFromLocalStorage();
+});
 
 // Logging for debugging
 console.log("Tasks Array:", tasksArray);
 console.log("Projects Array:", projectsArray);
+
