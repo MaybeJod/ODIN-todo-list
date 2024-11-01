@@ -1,6 +1,7 @@
 import "./styles/reset.css"; // Reset CSS
 import "./styles/style.css"; // Application styles
 
+
 import { addTask, addProject, tasksArray, projectsArray, removeTask, removeProject, loadDataFromLocalStorage } from './components/taskProjectManager.js';
 import { updateCounts } from './components/counter.js';
 import { sampleProjects, sampleTasks } from './components/sampleData.js';
