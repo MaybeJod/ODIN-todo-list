@@ -1,22 +1,21 @@
 import { sampleContent } from "./stored-data";
 
-//task array
+// Task and project arrays
 export let tasksArray = [];
-//project array
 export let projectsArray = [];
 
-//task constructor
+// Task constructor
 class Task {
     constructor(taskTitle, taskNotes, deadline, priority, location) {
         this.title = taskTitle;
         this.notes = taskNotes;
         this.deadline = deadline;
         this.priority = priority;
-        this.location = location;
+        this.projectName = location;  // Link task to project by name
     }
 }
 
-//project constructor
+// Project constructor
 class Project {
     constructor(projectName) {
         this.name = projectName;
@@ -24,37 +23,50 @@ class Project {
     }
 }
 
-//add task
+// Add task
 export function addTask(taskTitle, taskNotes, deadline, priority, location) {
-    let task = new Task(taskTitle, taskNotes, deadline, priority, location); 
+    let task = new Task(taskTitle, taskNotes, deadline, priority, location);
 
-    if(location === "Tasks") {
-        tasksArray.push(task);
-        saveTasksToLocalStorage(tasksArray);
-        } else {
-            let projectLocation = projectsArray.find(project => project.name === location);
-            if(projectLocation) {
-                projectLocation.tasks.push(task);
-                saveProjectsToLocalStorage(projectsArray);
-            }
-        }  
+    // Add task to the main tasks array
+    tasksArray.push(task);
+    saveTasksToLocalStorage(tasksArray);
+
+    // Also add task to the specified project's tasks array if applicable
+    if (location !== "Tasks") {
+        let projectLocation = projectsArray.find(project => project.name === location);
+        if (projectLocation) {
+            projectLocation.tasks.push(task);
+            saveProjectsToLocalStorage(projectsArray);
+        }
+    }
 }
 
-//add project
+// Add project
 export function addProject(projectName) {
-    let project = new Project(projectName);        
+    let project = new Project(projectName);
     projectsArray.push(project);
     saveProjectsToLocalStorage(projectsArray);
 }
-    
-//save tasks array to local storage    
+
+// Save tasks array to local storage
 export function saveTasksToLocalStorage(tasksArray) {
-        localStorage.setItem("tasks", JSON.stringify(tasksArray));
+    localStorage.setItem("tasks", JSON.stringify(tasksArray));
 }
 
-//save projects array to local storage
+// Save projects array to local storage
 export function saveProjectsToLocalStorage(projectsArray) {
     localStorage.setItem("projects", JSON.stringify(projectsArray));
+}
+
+// Count all tasks
+export function countAllTasks() {
+    return tasksArray.length;
+}
+
+// Count tasks in a specific project
+export function countTasksInProject(projectName) {
+    let project = projectsArray.find(project => project.name === projectName);
+    return project ? project.tasks.length : 0;
 }
 
 sampleContent();

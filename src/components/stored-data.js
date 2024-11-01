@@ -6,7 +6,7 @@ const parsedTasks = JSON.parse(savedTasks);
 
 export function sampleContent() {
     if((!parsedTasks) || (parsedTasks.length === 0)) {
-        addProject("Tasks");
+
         addProject("Website");
         addProject("Japan Trip");
 
@@ -16,6 +16,11 @@ export function sampleContent() {
 
         addTask("Task 2", "Task 2 Notes", "2021-10-11", "High", "Website");
 
+        addTask("Task 3", "Task 3 Notes", "2021-10-11", "High", "Website");
+
+        addTask("Task 5", "Task 5 Notes", "2021-10-11", "High", "Japan Trip");
+
+        addTask("Task 6", "Task 6 Notes", "2021-10-11", "High", "new project");
 
 
         return;
