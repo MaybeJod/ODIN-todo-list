@@ -23,3 +23,4 @@ export function updateCounts() {
     const allClearSection = document.querySelector(".no-more-tasks")
     allClearSection.style.display = tasksArray.length ? "none" : "block";
 }
+
