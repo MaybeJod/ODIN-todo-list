@@ -1,23 +1,49 @@
-import "./styles/reset.css";
-import "./styles/style.css";
+import "./styles/reset.css"; // Reset CSS
+import "./styles/style.css"; // Application styles
 
-import { countAllTasks, tasksArray,addTask, saveTasksToLocalStorage, projectsArray, addProject, saveProjectsToLocalStorage } from "./components/add-task-and-project";
+import { addTask, addProject, tasksArray, projectsArray } from './components/taskProjectManager.js';
+import { updateCounts } from './components/counter.js';
+//import { sampleProjects, sampleTasks } from './components/sampleData.js';
+
+// Load sample content if local storage is empty or if the sample data flag is not set
+/* function loadSampleContent() {
+    const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+    const savedProjects = JSON.parse(localStorage.getItem("projects"));
+    const sampleLoaded = localStorage.getItem("sampleLoaded");
+
+    // Load sample data only if it hasn't been loaded before or storage is empty
+    if ((!savedTasks || savedTasks.length === 0) && (!savedProjects || savedProjects.length === 0) && !sampleLoaded) {
+        sampleProjects.forEach(project => addProject(project));
+        sampleTasks.forEach(task => 
+            addTask(task.title, task.notes, task.deadline, task.priority, task.project)
+        );
+
+        // Save sample data to local storage
+        localStorage.setItem("tasks", JSON.stringify(tasksArray));
+        localStorage.setItem("projects", JSON.stringify(projectsArray));
+        localStorage.setItem("sampleLoaded", "true");  // Set flag to avoid reloading
+    } else {
+        // Populate arrays with existing data from local storage
+        tasksArray.push(...(savedTasks || []));
+        projectsArray.push(...(savedProjects || []));
+    }
+} */
+
+// Optionally, add a function to reset data (for testing or development)
+/* let resetButton = document.querySelector("#reset-button");
+resetButton.addEventListener("click", resetData());
+function resetData() {
+    localStorage.removeItem("tasks");
+    localStorage.removeItem("projects");
+    localStorage.removeItem("sampleLoaded");
+    loadSampleContent();
+}    */
 
 
+// Initialize application
+/* loadSampleContent(); */
+updateCounts();
 
-/* import { addProject, saveProjectsToLocalStorage } from "./components/add-project"; */
-
-//add task button
-    //creates what a task needs
-
-//task needs: 
-    //title - text
-    //notes - text
-    //deadline - date
-    //priority - dropdown with options
-    //what projects / main task DB - dropdown with options
-    
-//store tasks
-//display tasks
-
-console.log('world')
+// Logging for debugging
+console.log("Tasks Array:", tasksArray);
+console.log("Projects Array:", projectsArray);
