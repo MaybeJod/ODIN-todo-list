@@ -6,13 +6,9 @@ import { updateCounts } from './components/counter.js';
 import { sampleProjects, sampleTasks } from './components/sampleData.js';
 import { displayTaskForm } from './components/taskForm.js';
 import { addTaskToDOM } from './components/domManager.js';
+import { resetData } from "./components/reset-data.js";
 
 document.getElementById("addTaskButton").addEventListener("click", () => {
-    displayTaskForm(projectsArray);
-});
-
-document.getElementById("addTaskButton").addEventListener("click", () => {
-    console.log("Add Task button clicked"); // Debugging log
     displayTaskForm(projectsArray);
 });
 
@@ -48,26 +44,19 @@ function loadSampleContent() {
     }
 }
 
-// Optionally, add a function to reset data (for testing or development)
-/* let resetButton = document.querySelector("#reset-button");
-resetButton.addEventListener("click", resetData());
-function resetData() {
-    localStorage.removeItem("tasks");
-    localStorage.removeItem("projects");
-    localStorage.removeItem("sampleLoaded");
-    //loadSampleContent();
-
-}   */ 
-
+//reset data and goes back to sample data
+let resetButton = document.getElementById("reset-button");
+resetButton.addEventListener("click", resetData);
 
 // Initialize application
 loadSampleContent();
 updateCounts();
 
-
 document.addEventListener("DOMContentLoaded", () => {
     loadTasksFromLocalStorage();
 });
+
+
 
 // Logging for debugging
 console.log("Tasks Array:", tasksArray);

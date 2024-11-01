@@ -7,24 +7,6 @@ export let tasksArray = [];
 export let projectsArray = [];
 
 // Function to add task
-/* export function addTask(taskTitle, taskNotes, deadline, priority, location) {
-    const task = new Task(taskTitle, taskNotes, deadline, priority, location);
-    tasksArray.push(task);
-    saveTasksToLocalStorage();
-    
-    if (location !== "Tasks") {
-        const projectLocation = projectsArray.find(project => project.name === location);
-        if (projectLocation) {
-            projectLocation.tasks.push(task);
-        }
-        saveProjectsToLocalStorage();
-        updateCounts();
-        console.log("Current tasks array:", tasksArray);
-        return task;
-    }
-    
-} */
-
 export function addTask(title, notes, deadline, priority, project) {
     // Ensure all properties have values, even if default ones
     if (!title || !notes || !deadline || !priority || !project) {
@@ -64,7 +46,7 @@ export function removeTask(taskTitle) {
     // Save updated arrays to local storage
     saveTasksToLocalStorage();
     saveProjectsToLocalStorage();
-    updateLocalStorage
+    updateLocalStorage();
     updateCounts();
 }
 
